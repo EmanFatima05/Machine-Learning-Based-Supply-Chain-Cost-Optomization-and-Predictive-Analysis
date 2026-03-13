@@ -1,0 +1,21 @@
+product_id,product_key,product_name,category,product_line,spec,color,unit_price,unit_cost,weight_kg
+1,0d9df50c-9c82-4574-b9ab-152a2840afbb,HP EliteBook Laptop,Accessories,Standard,16GB,White,530.16,166.61,8.67
+2,7de9017e-13f4-48f0-8203-a321a615ae5e,Dell XPS Desktop,Appliances,Economy,32GB,White,160.81,729.76,0.7
+3,a1faaad7-b272-4c0e-a97b-d30da18990d3,Apple iPhone Charger,Electronics,Standard,128GB,White,847.06,249.42,2.34
+4,440c2ed5-1588-4f69-aea9-c1796eedd79a,Samsung 65in Smart TV,Appliances,Economy,128GB,Blue,1002.26,1728.94,0.82
+5,b83a49a2-98a8-4094-bcef-6d71d1386493,Sony WH1000XM5 Headphones,Appliances,Economy,64GB,White,714.81,1254.13,12.8
+6,a0772add-f4ca-4aa7-be2a-2d24fd305e86,LG InstaView Refrigerator,Appliances,Premium,128GB,Black,2080.41,675.18,6.42
+7,bed5f7a8-411b-4186-90ea-a3146178c121,Whirlpool Front Load Washer,Appliances,Economy,64GB,Silver,924.05,145.85,10.27
+8,7c776552-19a5-455d-acc8-e97991f23149,Canon Pixma Printer,Electronics,Premium,128GB,White,738.29,635.74,18.17
+9,18b55b3a-4308-4a8b-9a50-84ede4c6626e,Epson Workforce Scanner,Electronics,Economy,16GB,White,1379.61,663.86,5.14
+10,5d8537b5-eba7-4f57-ad41-72d7687b1382,Logitech MX Mouse,Appliances,Economy,128GB,Blue,395.26,1464.62,8.33
+11,ba4f7644-9fcf-4579-84b2-8c203fe82d58,Apple Magic Keyboard,Appliances,Premium,64GB,White,2015.38,1282.36,15.16
+12,db2c84fc-ade2-41ba-bdfa-d60d40c835af,Lenovo ThinkPad X1,Electronics,Premium,64GB,White,232.65,1776.68,4.73
+13,780bc9e8-5057-4c3d-8249-d31f8111f6ca,Asus ProArt Monitor,Electronics,Economy,32GB,White,2467.87,954.99,1.72
+14,401ff60c-27db-4a25-8c1e-1e1398778bdd,Bose SoundLink Speaker,Electronics,Standard,16GB,Blue,1942.0,256.8,5.94
+15,0eaf74cf-b542-4518-b9a6-f130273bab8f,KitchenAid Stand Mixer,Accessories,Premium,128GB,White,536.85,1432.22,3.39
+16,86f0f346-535e-4a7a-b604-e8891a7d312a,Dyson V15 Vacuum,Accessories,Standard,32GB,Silver,63.53,1526.35,18.61
+17,1e6c5b43-466d-430e-b65d-6929298e6a4a,GE Countertop Microwave,Accessories,Standard,128GB,Blue,2047.88,1131.33,16.2
+18,07177693-d456-47e8-bc90-45fecdd53c59,Philips Avance Blender,Appliances,Standard,128GB,Silver,1781.8,1546.52,12.74
+19,e19fc49f-0f6c-4d7a-82b2-863158ec7306,Panasonic Lumix Camera,Accessories,Premium,32GB,Blue,1836.07,997.72,17.45
+20,6f91ca8d-7165-45c2-9fcd-544694fb7f49,GoPro HERO12,Appliances,Standard,32GB,White,1939.61,1055.01,16.11

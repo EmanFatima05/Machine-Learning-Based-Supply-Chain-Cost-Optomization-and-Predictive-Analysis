@@ -1,0 +1,11 @@
+supplier_id,supplier_key,supplier_name,country,city,specialty,tier,avg_quality_score
+1, 512e3fec-8806-48d5-9479-aa222814c4a4, Intel Corporation          , USA    , Dallas  , Assembly , Tier 1,82.12
+2, a1490121-f4a3-4314-9b08-74c4ad9f2eb4, Foxconn Technology Group   , USA    , Dallas  , Chips    , Tier 2,71.95
+3, 50a5674d-3b98-4b4d-8a22-057b3a826790, Flex Ltd                   , USA    , Phoenix , Packaging, Tier 1,77.62
+4, 1d5034c0-4ddd-4df4-94b5-35086f0e311e, Jabil Inc                  , USA    , San Jose, Chips    , Tier 1,77.41
+5, 9438e473-d2e3-41ba-b546-5c983953e712, Pegatron Corporation       , USA    , Dallas  , Chips    , Tier 3,90.89
+6, 958cbc47-8296-4d22-9646-de138da509b0, Samsung Electronics America, USA    , Austin  , Displays , Tier 2,91.37
+7, c27e8cb1-c48e-46b8-8c94-b03ac01b24ed, Micron Technology Inc      , USA    , Austin  , Displays , Tier 3,74.44
+8, 153e73c7-d538-46f0-9df1-5c9cd81a97f3, Qualcomm Incorporated      , USA    , Austin  , Assembly , Tier 3,99.93
+9, 72bf323c-e4c2-4637-b2d9-fe4314b05f00, Texas Instruments          , USA    , Austin  , Packaging, Tier 2,78.0
+10, ca76b359-845b-430b-85eb-65155c509027, Broadcom Inc               , USA    , Phoenix , Displays , Tier 1,99.3

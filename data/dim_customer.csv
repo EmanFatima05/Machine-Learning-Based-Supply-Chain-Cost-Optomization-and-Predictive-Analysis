@@ -1,0 +1,6 @@
+customer_id,customer_key,customer_name,country,channel_type,size,annual_volume_usd
+1,7f9ddd6c-241d-416e-b89b-6c21cfd200c1,Walmart Inc,USA,Retail,Enterprise,1658637542
+2,60b6136c-955a-4fb1-97da-b75c138b9550,Costco Wholesale Corporation,USA,Wholesale,Enterprise,837846414
+3,ebafc1eb-e477-4279-b3c6-236ad9f65b61,Target Corporation,USA,Retail,Large,2621218620
+4,2974fd47-b279-43cb-b1cc-68b6c9d1a517,Home Depot Inc,USA,Retail,Large,2613451924
+5,def6305e-9b15-423f-a926-91ec05d1c062,Best Buy Co Inc,USA,Online,Enterprise,720094950

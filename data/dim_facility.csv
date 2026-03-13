@@ -1,0 +1,6 @@
+facility_id,facility_key,facility_name,country,city,facility_type,specialization,annual_capacity
+1,c85e6389-98cb-42aa-b85d-cbf59771a76f,Chicago Distribution Center,USA,Chicago,Manufacturing,Electronics,287337
+2,a680afca-0ff1-44b7-aeae-f04fbcf2d21a,Houston Distribution Center,USA,Houston,Warehouse,Appliances,237498
+3,270d57ef-7b5e-4ac4-bafd-4b7de3c6e903,Los Angeles Distribution Center,USA,Los Angeles,Manufacturing,Furniture,325203
+4,5cf89467-94b9-4894-808d-e2438d0db8a7,Phoenix Distribution Center,USA,Phoenix,Warehouse,General,341335
+5,a9fce366-6562-4826-b28c-535ae8ebdc94,Dallas Distribution Center,USA,Dallas,Manufacturing,Electronics,428167
