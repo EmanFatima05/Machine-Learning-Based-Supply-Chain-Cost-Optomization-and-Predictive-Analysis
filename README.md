@@ -288,7 +288,7 @@ Six ML tasks trained and evaluated on held-out test sets with cross-validation f
 | Random Forest | — | — | — | — | — |
 | **Gradient Boosting** | — | — | — | — | **Best** |
 
-#### 🏭 Task 4: High Defect Flag Prediction (`defect_rate_pct > 5%`)
+#### Task 4: High Defect Flag Prediction (`defect_rate_pct > 5%`)
 
 | Model | Accuracy | Precision | Recall | F1 | AUC |
 |-------|----------|-----------|--------|----|-----|
