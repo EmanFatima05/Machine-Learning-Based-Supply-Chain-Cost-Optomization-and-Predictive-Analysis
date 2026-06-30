@@ -351,15 +351,6 @@ All Models  →  Normalised Radar Chart Comparison Dashboard
 ---
 
 
-## Notes
-
-- All visualisations use a **dark GitHub-style theme** (`#0D1117` background) for consistency and readability
-- Models are evaluated on **held-out test sets** to avoid data leakage; cross-validation scores are also reported
-- Feature engineering is fully reproducible — every transformation is applied to the same train/test split used in modelling
-- The `TABLES_METADATA.pdf` serves as the data dictionary and should be consulted when interpreting column names
-
----
-
 <div align="center">
 
 **Built with Python · Pandas · Scikit-learn · XGBoost**
