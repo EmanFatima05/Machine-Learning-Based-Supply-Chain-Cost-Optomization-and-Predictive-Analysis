@@ -2,26 +2,26 @@
 
 **An end-to-end data science project covering exploratory analysis, feature engineering, and machine learning across a full star-schema supply chain data warehouse.**
 
-</div>
-
 ---
 
 ## Table of Contents
 
-- [Project Overview](#-project-overview)
-- [Data Architecture](#-data-architecture)
-- [Project Structure](#-project-structure)
-- [Phase 1 — Exploratory Data Analysis](#-phase-1--exploratory-data-analysis)
-- [Phase 2 — Feature Engineering](#-phase-2--feature-engineering)
-- [Phase 3 — Model Development & Evaluation](#-phase-3--model-development--evaluation)
-- [Key Findings](#-key-findings)
-- [ML Models Summary](#-ml-models-summary)
+- [Project Overview](#project-overview)
+- [Data Architecture](#data-architecture)
+- [Project Structure](#project-structure)
+- [Getting Started](#getting-started)
+- [Phase 1 — Exploratory Data Analysis](#phase-1--exploratory-data-analysis)
+- [Phase 2 — Feature Engineering](#phase-2--feature-engineering)
+- [Phase 3 — Model Development & Evaluation](#phase-3--model-development--evaluation)
+- [Key Findings](#key-findings)
+- [Tech Stack](#tech-stack)
+- [Author](#author)
 
 ---
 
 ## Project Overview
 
-This project builds a **full-stack supply chain intelligence system** — from raw relational tables to production-ready ML models. The goal: transform a multi-table star schema data warehouse into actionable business insights and predictive capabilities across procurement, production, logistics, and sales.
+This project builds a **full-stack supply chain intelligence system** — from raw relational tables to production-ready ML models. The goal is to transform a multi-table star-schema data warehouse into actionable business insights and predictive capabilities across procurement, production, logistics, and sales.
 
 ### Business Problems Solved
 
@@ -38,7 +38,7 @@ This project builds a **full-stack supply chain intelligence system** — from r
 
 ## Data Architecture
 
-The project is built on a classic **star schema** data warehouse with 5 dimension tables and 5 fact tables:
+The project is built on a classic **star schema** data warehouse with five dimension tables and five fact tables.
 
 ```
                         ┌──────────────┐
@@ -46,14 +46,14 @@ The project is built on a classic **star schema** data warehouse with 5 dimensio
                         └──────┬───────┘
                                │
 ┌──────────────┐    ┌──────────┴──────────┐    ┌──────────────┐
-│ dim_customer │────│    fact_sales        │────│ dim_product  │
+│ dim_customer │────│     fact_sales      │────│ dim_product  │
 └──────────────┘    └─────────────────────┘    └──────────────┘
-                    ┌─────────────────────┐
-┌──────────────┐    │  fact_procurement   │    ┌──────────────┐
-│ dim_supplier │────│  fact_production    │────│ dim_facility │
-└──────────────┘    │  fact_inventory     │    └──────────────┘
-                    │  fact_shipment      │
-                    └─────────────────────┘
+                     ┌─────────────────────┐
+┌──────────────┐     │  fact_procurement   │    ┌──────────────┐
+│ dim_supplier │─────│  fact_production    │────│ dim_facility │
+└──────────────┘     │  fact_inventory     │    └──────────────┘
+                     │  fact_shipment      │
+                     └─────────────────────┘
 ```
 
 ### Dimension Tables
@@ -83,10 +83,10 @@ The project is built on a classic **star schema** data warehouse with 5 dimensio
 ```
 supply-chain-analytics/
 │
-├──  supply_chain_eda.ipynb              # Phase 1: Full EDA (12 sections)
-├──  feature_engineering_supply_chain.ipynb  # Phase 2: Feature Engineering
-├──  model_development.ipynb            # Phase 3: ML Models + Evaluation
-├──  TABLES_METADATA.pdf                # Data dictionary & schema docs
+├── code/
+│   ├── supply_chain_eda.ipynb                 # Phase 1: Full EDA (11 sections)
+│   ├── feature_engineering_supply_chain.ipynb # Phase 2: Feature Engineering
+│   └── model_development.ipynb                # Phase 3: ML Models + Evaluation
 │
 ├── data/
 │   ├── dim_customer.csv
@@ -100,134 +100,62 @@ supply-chain-analytics/
 │   ├── fact_inventory.csv
 │   └── fact_shipment.csv
 │
+├── TABLES_METADATA.pdf      # Data dictionary & schema documentation
 └── README.md
 ```
 
 ---
 
-##  Phase 1 — Exploratory Data Analysis
+## Getting Started
 
-**Notebook:** `supply_chain_eda.ipynb`
+### Prerequisites
 
-A comprehensive, 12-section EDA covering every table in the warehouse. Each analysis answers a specific business question with both a visualization and an analytical justification.
+- Python 3.9 or later
+- Jupyter Notebook or JupyterLab
+- pip (or conda) for package management
 
-### EDA Sections
+---
 
-<details>
-<summary><b>1. Dataset Overview & Quality Checks</b></summary>
+## Phase 1 — Exploratory Data Analysis
 
-- Shape, dtypes, and sample inspection across all 10 tables
-- Descriptive statistics (mean, std, min, max) for all numeric columns
-- Duplicate row detection and primary key violation checks across all fact tables
+**Notebook:** `code/supply_chain_eda.ipynb`
 
-</details>
+A comprehensive, multi-section EDA covering every table in the warehouse. Each analysis answers a specific business question with both a visualization and an analytical justification.
 
-<details>
-<summary><b>2. Sales Analysis</b></summary>
+**1. Dataset Overview & Quality Checks** — shape, dtypes, and sample inspection across all ten tables; descriptive statistics for numeric columns; duplicate-row and primary-key violation checks across fact tables.
 
-- **KPI Scorecard** — Total orders, gross revenue, net revenue, profit, avg margin, total discounts
-- **Monthly revenue trend** — Time-series decomposition of net revenue, gross revenue, and profit
-- **Quarterly revenue breakdown** — Bar charts by year-quarter
-- **Profit margin distribution** — Histogram + KDE with median and break-even markers
-- **Discount vs. margin scatter** — Regression line testing whether heavy discounting erodes margins
-- **Monthly order volume trend** — Separating volume effects from pricing effects
+**2. Sales Analysis** — KPI scorecard (orders, gross/net revenue, profit, average margin, discounts); monthly and quarterly revenue trends; profit margin distribution; discount-vs-margin regression; monthly order volume trend.
 
-</details>
+**3. Customer Analysis** — top customers by net revenue; revenue split by channel type; customer-size distribution and annual volume by segment; channel × size revenue heatmap.
 
-<details>
-<summary><b>3. Customer Analysis</b></summary>
+**4. Product Analysis** — revenue and profit by product category; product-line (Premium/Standard/Economy) profitability comparison; top SKU-level performance ranking.
 
-- Top 15 customers by net revenue (horizontal bar chart)
-- Revenue split by channel type — Online, Retail, Wholesale (donut chart)
-- Customer size distribution and annual volume boxplot by segment
-- Revenue heatmap: channel type × customer size interaction
+**5. Procurement Analysis** — total spend, average lead time, and average quality score by supplier; lead time distribution; cost variance and quality-cost relationship.
 
-</details>
+**6. Supplier Analysis** — supplier-tier performance comparison; quality score distribution by specialty and country; supplier spend concentration.
 
-<details>
-<summary><b>4. Product Analysis</b></summary>
+**7. Production Analysis** — defect rate distribution across facilities and batches; facility capacity utilization; production volume trends over time.
 
-- Revenue and profit by product category (grouped bar chart)
-- Product line (Premium / Standard / Economy) profitability comparison
-- Top SKU-level performance ranking
+**8. Inventory Analysis** — stock level vs. safety stock vs. reorder point monitoring; stockout and overstock detection; inventory health by product and facility.
 
-</details>
+**9. Shipment & Logistics Analysis** — on-time delivery rate by carrier and facility; shipping cost distribution and cost-per-kg analysis; delay reason breakdown.
 
-<details>
-<summary><b>5. Procurement Analysis</b></summary>
+**10. Facility Analysis** — facility-level revenue contribution; manufacturing vs. warehouse performance; regional distribution of facility output.
 
-- Total spend, avg lead time, avg quality score by supplier
-- Lead time distribution across purchase orders
-- Cost variance and quality-cost relationship analysis
-
-</details>
-
-<details>
-<summary><b>6. Supplier Analysis</b></summary>
-
-- Supplier tier performance comparison (Tier 1 / 2 / 3)
-- Quality score distribution by specialty and country
-- Supplier spend concentration analysis
-
-</details>
-
-<details>
-<summary><b>7. Production Analysis</b></summary>
-
-- Defect rate distribution across facilities and batches
-- Facility capacity utilisation rates
-- Production volume trends over time
-
-</details>
-
-<details>
-<summary><b>8. Inventory Analysis</b></summary>
-
-- Stock level vs. safety stock vs. reorder point monitoring
-- Stockout risk and overstock detection patterns
-- Inventory health by product and facility
-
-</details>
-
-<details>
-<summary><b>9. Shipment & Logistics Analysis</b></summary>
-
-- On-time delivery rate by carrier and facility
-- Shipping cost distribution and cost-per-kg analysis
-- Delay reason breakdown and root cause frequency
-
-</details>
-
-<details>
-<summary><b>10. Facility Analysis</b></summary>
-
-- Facility-level revenue contribution
-- Manufacturing vs. warehouse performance comparison
-- Regional distribution of facility output
-
-</details>
-
-<details>
-<summary><b>11. Cross-Functional / Advanced Analysis</b></summary>
-
-- Multi-dimensional correlation heatmaps across joined fact+dim tables
-- Pareto analysis (80/20) on customer revenue and product contribution
-- End-to-end cost-to-revenue flow analysis
-
-</details>
+**11. Cross-Functional / Advanced Analysis** — multi-dimensional correlation heatmaps across joined fact and dimension tables; Pareto (80/20) analysis on customer and product contribution; end-to-end cost-to-revenue flow analysis.
 
 ---
 
 ## Phase 2 — Feature Engineering
 
-**Notebook:** `feature_engineering_supply_chain.ipynb`
+**Notebook:** `code/feature_engineering_supply_chain.ipynb`
 
-Transforms raw star-schema tables into ML-ready feature matrices via denormalization, aggregation, and domain-driven feature construction.
+Transforms raw star-schema tables into ML-ready feature matrices through denormalization, aggregation, and domain-driven feature construction.
 
 ### Feature Groups Created
 
 | Domain | Feature Examples |
-|--------|-----------------|
+|--------|-------------------|
 | **Inventory** | `stock_to_safety_ratio`, `days_to_stockout`, `overstock_flag`, `capital_at_risk` |
 | **Procurement** | `cost_per_unit_vs_avg`, `lead_time_vs_supplier_avg`, `quality_deviation`, `is_late_delivery` |
 | **Production** | `yield_rate`, `defect_flag`, `capacity_utilisation_pct`, `batch_quality_tier` |
@@ -239,8 +167,8 @@ Transforms raw star-schema tables into ML-ready feature matrices via denormaliza
 ### Pipeline Steps
 
 ```
-Raw Tables → Table Joins (dim + fact) → Null Handling → 
-Ratio & Lag Features → Aggregated Profiles → 
+Raw Tables → Table Joins (dim + fact) → Null Handling →
+Ratio & Lag Features → Aggregated Profiles →
 Encoding → Scaling → Final Feature Matrix
 ```
 
@@ -248,79 +176,43 @@ Encoding → Scaling → Final Feature Matrix
 
 ## Phase 3 — Model Development & Evaluation
 
-**Notebook:** `model_development.ipynb`
+**Notebook:** `code/model_development.ipynb`
 
-Six ML tasks trained and evaluated on held-out test sets with cross-validation for generalization assessment.
+Six ML tasks are trained and evaluated on held-out test sets, with cross-validation used to assess generalization.
 
 ### Regression Models
 
-#### Task 1: Procurement Cost Prediction (`total_cost`)
+**Task 1 — Procurement Cost Prediction** (`total_cost`)
+Models compared: Linear Regression, Ridge, Lasso, Random Forest, XGBoost. Tree-based ensembles (Random Forest, XGBoost) deliver the strongest fit on this target.
 
-| Model | MAE | RMSE | R² |
-|-------|-----|------|----|
-| Linear Regression | — | — | — |
-| Ridge | — | — | — |
-| Lasso | — | — | — |
-| **Random Forest** | — | — | **Best** |
-| **XGBoost** | — | — | **Best** |
+**Task 2 — Profit Margin Prediction** (`profit_margin_pct`)
+Same model family is benchmarked, with Random Forest and XGBoost again outperforming the linear baselines.
 
-#### Task 2: Profit Margin Prediction (`profit_margin_pct`)
-
-| Model | MAE | RMSE | R² |
-|-------|-----|------|----|
-| Linear Regression | — | — | — |
-| Ridge | — | — | — |
-| Lasso | — | — | — |
-| **Random Forest** | — | — | **Best** |
-| **XGBoost** | — | — | **Best** |
-
-> *Exact metric values are logged in the final evaluation dashboard cell of the notebook.*
-
----
+> Exact MAE / RMSE / R² values for both regression tasks are produced and logged in the final evaluation dashboard cell of `model_development.ipynb`.
 
 ### Classification Models
 
-#### Task 3: Shipment Delay Prediction (`is_delayed`)
+**Task 3 — Shipment Delay Prediction** (`is_delayed`)
+Models compared: Logistic Regression, Random Forest, Gradient Boosting — evaluated on Accuracy, Precision, Recall, F1, and AUC. Gradient Boosting is the top performer.
 
-| Model | Accuracy | Precision | Recall | F1 | AUC |
-|-------|----------|-----------|--------|----|-----|
-| Logistic Regression | — | — | — | — | — |
-| Random Forest | — | — | — | — | — |
-| **Gradient Boosting** | — | — | — | — | **Best** |
-
-#### Task 4: High Defect Flag Prediction (`defect_rate_pct > 5%`)
-
-| Model | Accuracy | Precision | Recall | F1 | AUC |
-|-------|----------|-----------|--------|----|-----|
-| Logistic Regression | — | — | — | — | — |
-| Random Forest | — | — | — | — | — |
-| **Gradient Boosting** | — | — | — | — | **Best** |
-
----
+**Task 4 — High-Defect Batch Flag** (`defect_rate_pct > 5%`)
+Same classifier family and metric set; Gradient Boosting again leads, with strong recall on the minority (high-defect) class.
 
 ### Clustering Models
 
-#### Task 5: Supplier Segmentation
+**Task 5 — Supplier Segmentation**
+Techniques: K-Means and Hierarchical Clustering, evaluated via Silhouette Score and Silhouette Plots. Features: `avg_quality_score`, `on_time_rate`, `spend_concentration`, `lead_time_avg`, `tier`.
 
-- **Techniques:** K-Means + Hierarchical Clustering
-- **Evaluation:** Silhouette Score + Silhouette Plots
-- **Features used:** avg_quality_score, on_time_rate, spend_concentration, lead_time_avg, tier
-
-#### Task 6: Customer Segmentation
-
-- **Techniques:** K-Means + Hierarchical Clustering
-- **Evaluation:** Silhouette Score + Silhouette Plots
-- **Features used:** lifetime_revenue, avg_order_value, discount_affinity, order_frequency, channel_type
-
----
+**Task 6 — Customer Segmentation**
+Techniques: K-Means and Hierarchical Clustering, evaluated via Silhouette Score and Silhouette Plots. Features: `lifetime_revenue`, `avg_order_value`, `discount_affinity`, `order_frequency`, `channel_type`.
 
 ### Evaluation Framework
 
 ```
-Regression  →  MAE, RMSE, R², Residual Distribution, Cross-Validation
-Classification  →  Accuracy, Precision, Recall, F1, AUC, Confusion Matrix, Per-Class Heatmap
-Clustering  →  Silhouette Score, Elbow Curve, Cluster Profile Analysis
-All Models  →  Normalised Radar Chart Comparison Dashboard
+Regression      → MAE, RMSE, R², Residual Distribution, Cross-Validation
+Classification  → Accuracy, Precision, Recall, F1, AUC, Confusion Matrix, Per-Class Heatmap
+Clustering      → Silhouette Score, Elbow Curve, Cluster Profile Analysis
+All Models      → Normalised Radar Chart Comparison Dashboard
 ```
 
 ---
@@ -328,31 +220,46 @@ All Models  →  Normalised Radar Chart Comparison Dashboard
 ## Key Findings
 
 ### Sales & Revenue
-- Revenue exhibits clear **seasonal trends** — quarterly analysis reveals peak and trough periods driving strategic planning
-- **Discount percentage has a measurable negative correlation with profit margin** — heavy discounting erodes margins and warrants pricing strategy review
-- The top 15 customers contribute a disproportionately large share of revenue, confirming **Pareto concentration** in the customer base
-- Channel type (Online vs. Retail vs. Wholesale) shows significant differences in both volume and profitability
+- Revenue exhibits clear **seasonal trends**, with quarterly analysis revealing peak and trough periods that inform strategic planning.
+- Discount percentage shows a measurable **negative correlation with profit margin** — heavy discounting erodes margins and warrants a pricing strategy review.
+- The top customers contribute a disproportionately large share of revenue, confirming **Pareto concentration** in the customer base.
+- Channel type (Online vs. Retail vs. Wholesale) shows significant differences in both volume and profitability.
 
 ### Procurement & Suppliers
-- **Supplier tier is a meaningful predictor** of both quality score and lead time reliability — Tier 1 suppliers significantly outperform Tier 2 and 3
-- Lead time variance is high within tiers, suggesting that supplier-level (not just tier-level) performance tracking is essential
-- Procurement cost is strongly driven by order quantity and unit cost — feature interactions between these are key predictors for the cost regression model
+- **Supplier tier is a meaningful predictor** of both quality score and lead-time reliability — Tier 1 suppliers significantly outperform Tier 2 and Tier 3.
+- Lead-time variance is high within tiers, suggesting supplier-level (not just tier-level) performance tracking is essential.
+- Procurement cost is strongly driven by order quantity and unit cost, with their interaction acting as a key predictor in the cost regression model.
 
 ### Production & Quality
-- Defect rates vary substantially across facilities and batch sizes — certain production facilities consistently produce above-average defect rates
-- Capacity utilisation is uneven across the facility network, indicating potential for load balancing and throughput optimisation
-- Batch-level defect flags (`defect_rate_pct > 5%`) are predictable with reasonably high recall using Gradient Boosting
+- Defect rates vary substantially across facilities and batch sizes, with certain facilities consistently producing above-average defect rates.
+- Capacity utilization is uneven across the facility network, indicating room for load balancing and throughput optimization.
+- High-defect batch flags (`defect_rate_pct > 5%`) are predictable with reasonably high recall using Gradient Boosting.
 
 ### Inventory & Logistics
-- A significant proportion of SKU-facility combinations show **stockout risk** (stock below safety stock level), particularly in high-demand product categories
-- Shipment delays cluster around specific carriers and origin facilities — delay root cause analysis highlights addressable operational bottlenecks
-- Shipping cost per kg varies substantially by carrier, suggesting carrier mix optimisation as a cost-reduction lever
+- A significant share of SKU-facility combinations show **stockout risk** (stock below safety-stock level), particularly in high-demand product categories.
+- Shipment delays cluster around specific carriers and origin facilities, with delay root-cause analysis highlighting addressable operational bottlenecks.
+- Shipping cost per kilogram varies substantially by carrier, pointing to carrier-mix optimization as a cost-reduction lever.
+
+---
+
+## Tech Stack
+
+| Category | Tools |
+|----------|-------|
+| Language | Python 3 |
+| Data Handling | Pandas, NumPy |
+| Machine Learning | Scikit-learn, XGBoost |
+| Visualization | Matplotlib, Seaborn |
+| Environment | Jupyter Notebook |
 
 ---
 
 
-<div align="center">
+## Author
 
-**Built with Python · Pandas · Scikit-learn · XGBoost**
+**Eman Fatima**
+[GitHub Profile](https://github.com/EmanFatima05)
 
-</div>
+---
+
+*Built with Python · Pandas · Scikit-learn · XGBoost*
